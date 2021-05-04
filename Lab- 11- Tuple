@@ -1,0 +1,26 @@
+print("!!!!! HITUNG BUKUMU !!!!!")
+print()
+nama=(input("Masukkan namamu:"))
+print()
+print("Hai",nama,"ini buku-buku yang kamu miliki:")
+print()
+def hitungbuku(data):
+    srted=[]
+    for m in data:
+        srted.append(m)
+        mkey=list(dict.fromkeys(srted))
+    
+        out={}
+    for m in mkey:
+        g=[x for x in srted if x == m]
+        out[m]=len(g)
+    f=list(out.items())
+    r=0
+    for key,val in f:
+        r+=val
+        print("Buku dengan jenis",key,"sejumlah",val,"buku")
+    print()
+    print("Total buku yang dimiliki",nama,"sejumlah",r,"buku!!!")
+
+buku=("Matematika","Matematika","Majalah anak","Bahasa Jerman","Puisi Abstrak","Majalah Fashion","Jaringan komputer","Resep Masak","Komik horor","Alkitab","Alkitab")
+hitungbuku(buku)
